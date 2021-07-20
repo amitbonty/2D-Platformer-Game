@@ -336,7 +336,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -344,7 +344,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2113295699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,6 +385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2113295695}
   speed: 5
+  jump: 100
+  isGrounded: 0
 --- !u!1001 &4329472314576133725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 4329472315518442265, guid: b43c9cc6a10841b4abd26d56a55627ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7169812
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 4329472315518442265, guid: b43c9cc6a10841b4abd26d56a55627ee,
         type: 3}

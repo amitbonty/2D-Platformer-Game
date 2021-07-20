@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     public float jump;
+    public bool isGrounded;
+
 
 
 
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
         PlayerFlip(moveSpeed);
         PlayerMovement(moveSpeed, vertical);
         PlayerJump(vertical);
+        PlayerCrouch();
     }
     public void PlayerMovement(float moveSpeed, float vertical)
     {
@@ -54,13 +57,29 @@ public class PlayerController : MonoBehaviour
     }
     public void PlayerJump(float vertical)
     {
-        if(vertical > 0)
-        {
-            animator.SetBool("Jump", true);
-        }
+        
+      
+            if (Input.GetKey(KeyCode.Space))
+            {
+               animator.SetBool("Jump", true);
+               //animation.Play("PlayerJump");
+            
+            }
+            else
+            {
+                animator.SetBool("Jump", false);
+            }
+        
+    }
+    public void PlayerCrouch()
+    {
+        if(Input.GetKey(KeyCode.C))
+            {
+              animator.SetBool("Crouch", true);
+            }
         else
-        {
-            animator.SetBool("Jump", false);
-        }
+          {
+            animator.SetBool("Crouch", false);
+          }
     }
 }
