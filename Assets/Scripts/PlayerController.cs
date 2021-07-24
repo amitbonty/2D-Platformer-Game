@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jump;
     public bool isGrounded;
     public float vertical;
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -27,6 +29,14 @@ public class PlayerController : MonoBehaviour
         PlayerJump(vertical);
         PlayerCrouch();
     }
+
+   public void KeyPickup()
+    {
+        Debug.Log("Player Picked Up Key!");
+        gameManager.IncreaseScore();
+        
+    }
+
     public void FixedUpdate()
     {
        
