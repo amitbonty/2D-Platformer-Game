@@ -6,7 +6,7 @@ public class KeyController : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.GetComponent<PlayerController>() != null)
+        if(collision.gameObject.GetComponent<PlayerController>())
         {
             PlayerController playercontroller = collision.gameObject.GetComponent<PlayerController>();
             playercontroller.KeyPickup();

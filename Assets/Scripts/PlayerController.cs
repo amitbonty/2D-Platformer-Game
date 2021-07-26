@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,11 +13,17 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public float vertical;
     public GameManager gameManager;
+    public int PlayerLives;
+    public GameObject Heart1, Heart2, Heart3;
 
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
        
+    }
+    private void Start()
+    {
+        PlayerLives = 3;
     }
 
     public void Update()
@@ -28,18 +35,13 @@ public class PlayerController : MonoBehaviour
         PlayerMovement(moveSpeed, vertical);
         PlayerJump(vertical);
         PlayerCrouch();
+        PlayerHealth();
     }
-
    public void KeyPickup()
     {
         Debug.Log("Player Picked Up Key!");
         gameManager.IncreaseScore();
         
-    }
-
-    public void FixedUpdate()
-    {
-       
     }
     public void PlayerMovement(float moveSpeed, float vertical)
     {
@@ -75,5 +77,52 @@ public class PlayerController : MonoBehaviour
     public void PlayerCrouch()
     {
       animator.SetBool("Crouch", Input.GetKey(KeyCode.C));
+    }
+    public void PlayerDamaged()
+    {
+        Debug.Log("Player Dead!");
+        PlayerLives--;
+        //animator.SetBool("isDead", true);
+        //ReloadLevel();
+    }
+    public  void PlayerDeath()
+    {
+        if(PlayerLives <= 0)
+        {
+            ReloadLevel();
+        }
+    }
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void PlayerHealth()
+    {
+        switch (PlayerLives)
+        {
+            case 1:
+                Heart1.gameObject.SetActive(true);
+                Heart2.gameObject.SetActive(false);
+                Heart3.gameObject.SetActive(false);
+                break;
+            case 2:
+                Heart1.gameObject.SetActive(true);
+                Heart2.gameObject.SetActive(true);
+                Heart3.gameObject.SetActive(false);
+                break;
+            case 3:
+                Heart1.gameObject.SetActive(true);
+                Heart2.gameObject.SetActive(true);
+                Heart3.gameObject.SetActive(true);
+                break;
+            case 0:
+                Heart1.gameObject.SetActive(false);
+                Heart2.gameObject.SetActive(false);
+                Heart3.gameObject.SetActive(false);
+                PlayerDeath();
+                break;
+        }
+            
+             
     }
 }
