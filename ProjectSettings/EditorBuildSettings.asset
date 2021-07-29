@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/2DPlatformerLevel1.unity
+    guid: 9c55a48335d2141478dc6f7263df6601
+  - enabled: 1
+    path: Assets/Scenes/2DPlatformerLevel2.unity
+    guid: 38e9398a47bdc9745ab265639fbcab32
+  - enabled: 1
+    path: Assets/Scenes/2DPlatformerLevel3.unity
+    guid: 3ec0a8ba5cbda474f9bb2885a3a13d0a
+  - enabled: 1
+    path: Assets/Scenes/2DPlatformerLevel4.unity
+    guid: 61397f052b76f2e4f9931252d8db87a3
+  - enabled: 1
+    path: Assets/Scenes/2DPlatformerLobby.unity
+    guid: efdea49b1e6c0594ba21ffeff80dbf3e
+  - enabled: 1
+    path: Assets/Scenes/2DPlatformerStartScreen.unity
+    guid: 65deedb3871660a449f7ccb5ca6407ea
   m_configObjects: {}

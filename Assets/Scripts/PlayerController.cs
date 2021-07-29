@@ -14,12 +14,11 @@ public class PlayerController : MonoBehaviour
     public float vertical;
     public GameManager gameManager;
     public int PlayerLives;
-    public GameObject Heart1, Heart2, Heart3;
+    public GameObject Heart1 ,Heart2, Heart3;
 
     private void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
-       
+        rb = gameObject.GetComponent<Rigidbody2D>();   
     }
     private void Start()
     {
@@ -53,7 +52,9 @@ public class PlayerController : MonoBehaviour
         //move player vertically
         if (vertical > 0)
         {
-            rb.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
+           /* rb.AddForce(new Vector2(0f, jump), ForceMode2D.Force);*/
+           Vector2 movement = new Vector2(rb.velocity.x, jump);
+            rb.velocity = movement;
         }
     }
     public void PlayerFlip(float moveSpeed)
@@ -89,13 +90,11 @@ public class PlayerController : MonoBehaviour
     {
         if(PlayerLives <= 0)
         {
-            ReloadLevel();
+            gameManager.GameOver();
+            this.enabled = false;
         }
     }
-    public void ReloadLevel()
-    {
-        SceneManager.LoadScene(0);
-    }
+   
     public void PlayerHealth()
     {
         switch (PlayerLives)
@@ -109,6 +108,7 @@ public class PlayerController : MonoBehaviour
                 Heart1.gameObject.SetActive(true);
                 Heart2.gameObject.SetActive(true);
                 Heart3.gameObject.SetActive(false);
+               
                 break;
             case 3:
                 Heart1.gameObject.SetActive(true);

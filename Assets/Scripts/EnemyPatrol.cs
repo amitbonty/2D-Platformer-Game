@@ -35,7 +35,6 @@ public class EnemyPatrol : MonoBehaviour
         {
             PlayerController playercontroller = collision.gameObject.GetComponent<PlayerController>();
             playercontroller.PlayerDamaged();
-
         }
     }
 }
