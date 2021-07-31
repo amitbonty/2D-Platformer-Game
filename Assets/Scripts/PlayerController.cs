@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
     }
     public void PlayerDamaged()
     {
-        Debug.Log("Player Dead!");
+        Debug.Log("Player Hurt!");
         PlayerLives--;
         //animator.SetBool("isDead", true);
         //ReloadLevel();
