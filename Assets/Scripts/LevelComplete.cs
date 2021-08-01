@@ -11,6 +11,7 @@ public class LevelComplete : MonoBehaviour
         {
             Debug.Log("Level is complete!");
             LevelManager.Instance.MarkCurrentLevelComplete();
+            SoundManager.Instance.Play(Sounds.LevelComplete);
         }
     }
 }

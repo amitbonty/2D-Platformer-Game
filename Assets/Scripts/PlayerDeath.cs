@@ -11,6 +11,7 @@ public class PlayerDeath : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
             Debug.Log("Player Death!");
+            SoundManager.Instance.Play(Sounds.PlayerDeath);
             gameManager.GameOver();
             
         }

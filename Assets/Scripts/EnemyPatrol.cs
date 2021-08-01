@@ -35,6 +35,7 @@ public class EnemyPatrol : MonoBehaviour
         {
             PlayerController playercontroller = collision.gameObject.GetComponent<PlayerController>();
             playercontroller.PlayerDamaged();
+            SoundManager.Instance.Play(Sounds.PlayerHurt);
         }
     }
 }

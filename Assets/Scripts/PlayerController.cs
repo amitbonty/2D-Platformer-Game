@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         float moveSpeed = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Jump");
-
         PlayerFlip(moveSpeed);
         PlayerMovement(moveSpeed, vertical);
         PlayerJump(vertical);
@@ -48,7 +47,8 @@ public class PlayerController : MonoBehaviour
         Vector3 position = transform.position;
         position.x += moveSpeed * speed * Time.deltaTime;
         transform.position = position;
-
+        /*  Vector2 forceadded = new Vector2(moveSpeed * speed * Time.deltaTime, 1f);
+          rb.AddForce(forceadded, ForceMode2D.Force);*/
         //move player vertically
         if (vertical > 0)
         {

@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
         SetLevelStatus((Levels[0]), LevelStatus.Unlocked);
         SetLevelStatus((Levels[1]), LevelStatus.Unlocked);
         SetLevelStatus((Levels[2]), LevelStatus.Unlocked);
+        Debug.Log("Level STATUS _ : " + GetLevelStatus(Levels[4]));
      
     }
     public void MarkCurrentLevelComplete()
