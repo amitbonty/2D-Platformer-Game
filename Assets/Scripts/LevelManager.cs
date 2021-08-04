@@ -26,8 +26,6 @@ public class LevelManager : MonoBehaviour
         SetLevelStatus((Levels[0]), LevelStatus.Unlocked);
         SetLevelStatus((Levels[1]), LevelStatus.Unlocked);
         SetLevelStatus((Levels[2]), LevelStatus.Unlocked);
-        Debug.Log("Level STATUS _ : " + GetLevelStatus(Levels[4]));
-     
     }
     public void MarkCurrentLevelComplete()
     {
@@ -39,7 +37,6 @@ public class LevelManager : MonoBehaviour
         {
             SetLevelStatus(Levels[nextSceneIndex], LevelStatus.Unlocked);
         }
-
     }
     public LevelStatus GetLevelStatus(string level)
     {
@@ -49,6 +46,5 @@ public class LevelManager : MonoBehaviour
     public void SetLevelStatus(string level, LevelStatus levelStatus)
     {
         PlayerPrefs.SetInt(level, (int)levelStatus);
-        Debug.Log("Setting level : " + level + " Status: " + levelStatus);
     }
 }

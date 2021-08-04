@@ -8,12 +8,10 @@ public class PlayerDeath : MonoBehaviour
     public GameManager gameManager;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerController>() != null)
+        if (other.gameObject.GetComponent<PlayerController>())
         {
-            Debug.Log("Player Death!");
-            SoundManager.Instance.Play(Sounds.PlayerDeath);
             gameManager.GameOver();
-            
+            SoundManager.Instance.Play(Sounds.PlayerDeath);
         }
     }
 }

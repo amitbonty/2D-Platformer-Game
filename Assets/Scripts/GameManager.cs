@@ -10,10 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject GameOverPanel;
     public static int score = 0;
-    private void Awake()
-    {
-        
-    }
+ 
     public void GameOver()
     {
         GameOverPanel.SetActive(true);
@@ -22,7 +19,6 @@ public class GameManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.buildIndex);
-        Debug.Log("Reloaded Level !! ");
     }
     public void IncreaseScore()
     {
