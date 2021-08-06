@@ -1,2 +1,5 @@
 # 2D-Platformer-Game
-The 2D platformer game to be forked something like mario its a clean repo made for LTS version
+2D Platformer game with-
+*Singleton Design pattens for sound and level managers.
+*Multi level structure.
+*Animations for player movement and collectibles.
