@@ -1,4 +1,4 @@
-# 2D-Platformer-Game
+# TheExplorer
 2D Platformer game made with Unity3D.
 <br>- Implemented Singleton design patterns for sound and level managers. 
 <br>- Implemented unity tilemap system for creating different levels.
