@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Button))]
 public class SceneLoader : MonoBehaviour
 {
-    public Button button;
-    public string SceneName;
-
+    [SerializeField]
+     Button button;
+    [SerializeField]
+     string SceneName;
+     
     private void Awake()
     {
         button = GetComponent<Button>();

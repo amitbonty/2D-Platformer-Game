@@ -6,15 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Animator animator;
-    public float speed;
+    [SerializeField]
+    Animator animator;
+    [SerializeField]
+    float speed;
     private Rigidbody2D rb;
-    public float jump;
-    public bool isGrounded;
-    public float vertical, moveSpeed;
-    public GameManager gameManager;
-    public int PlayerLives;
-    public GameObject[] Hearts;
+    [SerializeField]
+    float jump;
+    [SerializeField]
+    bool isGrounded;
+    [SerializeField]
+    float vertical, moveSpeed;
+    [SerializeField]
+    int PlayerLives;
+    [SerializeField]
+    GameObject[] Hearts;
 
     private void Awake()
     {
@@ -29,7 +35,6 @@ public class PlayerController : MonoBehaviour
     {
         moveSpeed = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Jump");
-        
         PlayerHealth();
         PlayerDeath();
     }
@@ -42,7 +47,7 @@ public class PlayerController : MonoBehaviour
     }
     public void KeyPickup()
     {
-        gameManager.IncreaseScore();
+        GameManager.Instance.IncreaseScore();
     }
     public void PlayerMovement(float moveSpeed, float vertical)
     {
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if(PlayerLives <= 0)
         {
-            gameManager.GameOver();
+            GameManager.Instance.GameOver();
             this.enabled = false;
         }
     }

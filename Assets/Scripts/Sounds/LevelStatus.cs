@@ -3,5 +3,4 @@
    Locked,
    Unlocked,
    Completed
-
 }

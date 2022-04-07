@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float speed;
-    public float distance;
+    [SerializeField]
+    float speed;
+    [SerializeField]
+    float distance;
+    [SerializeField]
+    Transform groundDetector;
+    [SerializeField]
+    Animator animator;
     private bool movingRight = true;
-    public Transform groundDetector;
-    public Animator animator;
 
     private void Update()
     {

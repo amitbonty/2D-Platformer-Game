@@ -8,7 +8,8 @@ public class LevelManager : MonoBehaviour
 {
     private static LevelManager instance;
     public static LevelManager Instance{get{ return instance; }}
-    public string[] Levels;
+    [SerializeField]
+    string[] Levels;
     private void Awake()
     {
         if (instance == null)

@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoSingleton<GameManager>
 {
-    public TextMeshProUGUI scoreText;
-    public GameObject GameOverPanel;
-    public static int score = 0;
+    [SerializeField]
+    TextMeshProUGUI scoreText;
+    [SerializeField]
+    GameObject GameOverPanel;
+    public int score = 0;
  
     public void GameOver()
     {
